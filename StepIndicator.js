@@ -196,6 +196,7 @@ export default class StepIndicator extends Component {
       steps.push(
         <TouchableWithoutFeedback
           key={position}
+          hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
           onPress={() => this.stepPressed(position)}
         >
           <View
@@ -420,7 +421,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: 'transparent'
+    backgroundColor: 'rgba(1,0,0,0)'
   },
   stepLabelsContainer: {
     justifyContent: 'space-around'
@@ -439,7 +440,8 @@ const styles = StyleSheet.create({
   stepLabel: {
     fontSize: 12,
     textAlign: 'center',
-    fontWeight: '500'
+    fontWeight: '500',
+    padding: 8
   },
   stepLabelItem: {
     flex: 1,
